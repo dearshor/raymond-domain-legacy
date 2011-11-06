@@ -15,6 +15,42 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<scm>
+		<connection>scm:git:git://github.com/dearshor/raymond-domain-legacy.git</connection>
+		<developerConnection>scm:git:git@github.com:dearshor/raymond-domain-legacy.git</developerConnection>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>raymond-nexus-releases</id>
+			<url>http://raymonddesign.xicp.net:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>raymond-nexus-snapshots</id>
+			<url>http://raymonddesign.xicp.net:8081/nexus/content/repositories/snapshots/</url>
+			<uniqueVersion>true</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<properties>
 		<!-- Build System Properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
